@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Test_DOM</title>
+</head>
+<body>
+    <center>
+    <H1 id = "texte">Contraste Jour / Nuit</H1>
+        <br/>
+    <img id="img" src="Images/Jour.png" alt="Jour"/>
+        <br/>
+        <input type=button onclick= passerJour(); value=JOUR />
+        <br/>
+        <input type=button onclick= passerNuit(); value=NUIT />
+
+
+
+        <form>
+            <h1>How are you feeling today?</h1>
+            <input class="hide" type="checkbox" title="Happy" name="happy" id="happy">
+            <label for="happy" class="option-happy">Happy</label>
+
+            <input class="hide" type="checkbox" title="Sad" name="sad" id="sad">
+            <label for="sad" class="option-sad">Sad</label>
+
+            <input class="hide" type="checkbox" title="Meh" name="meh" id="meh">
+            <label for="meh" class="option-meh">Meh</label>
+        </form>
+
+
+    </center>
+
+    <script>
+        function passerJour() {
+            texte = document.getElementById("texte");
+            texte.setAttribute("class", "noir");
+            img = document.getElementById("img");
+            img.src = "Images/Jour.png";
+            document.body.style.background = "white";
+        }
+        function passerNuit() {
+            texte = document.getElementById("texte");
+            texte.setAttribute("class", "blanc");
+            img = document.getElementById("img");
+            img.src = "Images/Nuit.png";
+            document.body.style.background = "black";
+        }
+    </script>
+
+</body>
+</html>
