@@ -1,17 +1,18 @@
 
+
 # Prosit 5.2 JavaScript
 
 ## Mots clés
 
-*	Héritage
-*	Jquery
-*	JavaScript
-*	Caroussel
-*	ECMAScript
-*	Auto-completion
-*	JSON
-*	Prototype
-*	PHP
+*	Héritage : Hériter de propriétés d'un ancêtre (objet)
+*	Jquery : Bibliothèque basée sur le Javascript.
+*	JavaScript : Langage informatique web, qui s'éxecute côté client, pour créer du dynamisme
+*	Caroussel : Composant web qui défile les images.
+*	ECMAScript : Norme basée sur le javascript.
+*	Auto-completion : Complète automatiquement ce qu'on écrit.
+*	JSON : Fichier d'encodage (comme le .xml) qui permet de transmettre 
+*	Prototype : Exemplaire incomplet et non définit de ce que pourra être l'objet final
+*	PHP : Hypertext Prepocessor
 *	Programmation fonctionnel
 
 
@@ -131,11 +132,12 @@ JQuery est une librérie très riche de Javascript pour facilité l'écriture de
 
 # 4 - Le JSON 
 
-Le JSON (JavaScript Object Notation) est un format de données textuelles. Il permet de représenter de l'information structurée (comme le XML).
+Le JSON (JavaScript Object Notation) est un format de données textuelles assez léger. Il permet de représenter de l'information structurée (comme le XML). Il est aisément analysable ou générable par des machines.
+
 Un document JSON représente de l'information accompagnée d'étiquettes qui permettent de les interpréter.
 Il ne comprends que deux types d'élements structurels :
-- Nom / Valeur
-- Liste ordonnées de valeurs
+- Nom / Valeur : Un couple 
+- Liste ordonnées de valeurs 
 Ces mêmes élements représentent trois types de données :
 - Objets
 - Tableaux
@@ -144,3 +146,80 @@ Ces mêmes élements représentent trois types de données :
 Pour vérifier / cast les types, on peut utiliser la méthode eval() (Javascript), à préférer plutôt que JSON.parse.
 
 
+# 5 - Ajax
+
+Asynchronous JavaScript and XML permet de construire des applications Web et des sites web dynamiques interactifs sur un poste client, en utilisant les technologies du navigateur.
+
+Il combine JavaScript, CSS, JSON, XML, DOM, et XMLHttpRequest pour améliorer les applications internet..
+- DOM + Javascript : Modifier l'information présentée dans le navigateur en respectant sa structure
+- XMLHttpRequest : Dialogue asynchrone avec le serveur Web
+- XML : Structure les informations transmises entre serveur Web et navigateur (format JSON)
+
+#### **Comment marche AJAX :**
+Un programme écrit en JavaScript incorporé dans une page web est exécuté par le navigatuer, celui-ci envoie en arrière-plan les demandes au serveur Web, puis modifie le contenue de la page affiché par le navigateur en fonction du résultat reçu (**évitant donc l'affichage d'une nouvelle page complète**)
+ 
+ Les demandes sont effectués de manière  **asynchrone**, càd que le web continue d'exécuter le JavaScript alors que la demande est partie, et n'attends pas la réponse du serveur Web pour poursuivre ses manipulations.
+
+On peut utiliser Ajax de différentes manières :
+-  Il existe une API sous JQuery
+- On peut utiliser XMLHttpRequest
+
+**Principe de XMLHttpRequest :**
+- **Préparation et envoi de la requête**
+	- On instancie : ``
+var xhr = new XMLHttpRequest();
+``
+	- On déclare notre action et sur qui on veut la faire (+ envoi si Get) : (encore sert à éviter caractères interdits)
+	 ``
+var value1 = encodeURIComponent(value1),
+    value2 = encodeURIComponent(value2);
+xhr.open('GET', 'http://mon_site_web.com/ajax.php?param1=' + value1 + '&param2=' + value2);
+``
+	- On envoie si l'action est un POST : ``
+xhr.send('param1=' + value1 + '&param2=' + value2);
+``
+- **Réception des données**: 
+C'est une fonction, "readystatechange" qui va se déclancher sur les évènements suivants : 
+//Image ici
+
+xhr.addEventListener('readystatechange', function() { // On gère ici une requête asynchrone
+
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) { // Si le fichier est chargé sans erreur
+
+        document.getElementById('fileContent').innerHTML = '<span>' + xhr.responseText + '</span>'; // On l'affiche !
+
+    } else if (xhr.readyState === XMLHttpRequest.DONE && xhr.status != 200) { // En cas d'erreur !
+    
+        alert('Une erreur est survenue !\n\nCode :' + xhr.status + '\nTexte : ' + xhr.statusText);
+
+    }
+
+});
+
+
+# 6 - Systèmes web dynamique :
+
+**Carousel** : 
+![](http://zidimperio.com/wp-content/uploads/carousel-web-design-21-best-carousel-design-images-on-pinterest-carousels-website.jpg)
+
+  ==> Carousel.js : http://getbootstrap.com/javascript/#carousel
+==> Carousel JQuery : http://plugins.jquery.com/tag/carousel/
+
+**Autocomplete.js** : http://autocompletejs.com/
+
+
+# 7 - Pour aller plus loin :
+promise.js => lire un fichier et le parser en JSON, faire des traitement de manières aynchrone.
+
+Async Function => Définie une fonction asynchrone (le retourne en objet)
+
+documents.querySelector : Retourne le premier élement dans le document correspondant.
+
+documents.querySelectorAll : Renvoie la liste des éléments dans le document, dans une collection de noeuds (NodeLIst)
+
+**VanillaJS** : Gros troll d'internet -> http://vanilla-js.com/
+
+
+
+
+ 
