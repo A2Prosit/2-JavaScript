@@ -2,16 +2,16 @@
 
 ## Mots clés
 
-*	Héritage
-*	Jquery
-*	JavaScript
-*	Caroussel
-*	ECMAScript
-*	Auto-completion
-*	JSON
-*	Prototype
-*	PHP
-*	Programmation fonctionnel
+*	Héritage: comme en java
+*	Jquery: module js qui permet 
+*	JavaScript: language qui permet d'animer du web
+*	Caroussel: images qui défilent
+*	ECMAScript: standart du js
+*	Auto-completion: you know what it is
+*	JSON: format d'encode de données
+*	Prototype: concept JS ~copie d'objet avec des propriétées/fontions en +
+*	PHP: langage de script serv
+*	Programmation fonctionnel: prog qui prends et retourne des fonctions
 
 
 ## Contexte
@@ -226,6 +226,34 @@ on n'utilise pas de machines à états pour décrire un programme mais un emboî
 Ce paradigme facilite la création de tests unitaires 
 
 ### VI.	Éléments dynamiques d’un site web
+
+
+### AJAX
+
+Asychronous javascript + xml: 
+
+Permet de réaliser des applis asychrones et recevoir les info sans affecter l'affichage. La plupart des implémentations modernes utilient JSON plutot qu'XML
+
+Le terme ajax engloble plusieurs techno:
+
+* html
+* css
+* dom
+* js
+* json ou xml
+* xmlhttprequest
+
+
+### DOM
+
+Document object model : le DOM définit la structure d'une page et le moyen d'interagir avec elle. Il s'agit d'une interface de prog (API apllication programming interface)
+
+Au début du web chaque navigateur avait son propre DOM incompatible avec les autres mais avec w3c tous les DOM utilisent le standard et sont compatibles.
+
+Une page web peut être représentée sous forme d'arborescence, chaque entité est appellée un noeud, on les distinguent en deux types:
+
+* ceux qui correspondent à es éléments html appellés noeuds enfants
+* le contenu textuel
 
 Réalisation :
 ### VII.	Corbeille
